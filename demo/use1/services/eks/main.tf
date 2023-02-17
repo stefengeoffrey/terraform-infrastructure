@@ -44,7 +44,7 @@ provider "helm" {
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-        bucket = "demo-geoff-terraform-state"
+        bucket = "demo-geoff1-terraform-state"
         key    = "demo/use1/network/vpc/terraform.tfstate"
         region = "us-east-1"
   }

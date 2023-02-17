@@ -21,6 +21,8 @@ terraform {
 
 provider "aws" {
   region = "us-east-1"
+ # assume_role {
+ #   role_arn = "arn:aws:iam::210524891490:role/Dev-Admin"
 
 
   default_tags {
@@ -48,7 +50,7 @@ data "terraform_remote_state" "vpc" {
         bucket = "geoff-nonprod-terraform-state"
         key    = "non-prod/use1/network/vpc/terraform.tfstate"
         region = "us-east-1"
-
+       # role_arn = "arn:aws:iam::210524891490:role/Dev-Admin"
   }
 }
 
@@ -64,7 +66,7 @@ data "terraform_remote_state" "eks" {
         bucket = "geoff-nonprod-terraform-state"
         key    = "non-prod/use1/services/eks/terraform.tfstate"
         region = "us-east-1"
-
+       # role_arn = "arn:aws:iam::210524891490:role/Dev-Admin"
   }
 }
 

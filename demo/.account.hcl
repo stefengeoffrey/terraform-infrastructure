@@ -1,3 +1,4 @@
 locals {
-  bucket  = "demo-geoff-terraform-state"
+  #role    = "arn:aws:iam::xxxxxxx:role/admin"
+  bucket  = "demo-geoff1-terraform-state"
 }

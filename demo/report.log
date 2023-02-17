@@ -1,0 +1,1919 @@
+=== ✅ ./globals/s3 Passed  ===
+=== ✅ ./globals/iam Passed  ===
+=== ✅ ./globals/ram Passed  ===
+=== 🚧 ./globals/route53 Drift Detected ===
+[0m[1mdata.terraform_remote_state.vpc: Reading...[0m[0m
+[0m[1mdata.terraform_remote_state.vpc: Read complete after 0s[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.delegation_sets.aws_route53_delegation_set.this["main"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_delegation_set" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname_servers[0m[0m = (known after apply)
+    }
+
+[1m  # module.records.data.aws_route53_zone.this[0][0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mcaller_reference[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_description[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_principal[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_zone[0m[0m               = false
+      [32m+[0m [0m[1m[0mresource_record_set_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                    = (known after apply)
+    }
+
+[1m  # module.records.aws_route53_record.this[" A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.records.aws_route53_record.this["geo CNAME europe"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "geo.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"europe.test.example.com.",
+        ]
+      [32m+[0m [0m[1m[0mset_identifier[0m[0m  = "europe"
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 5
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "CNAME"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0mgeolocation_routing_policy {
+          [32m+[0m [0m[1m[0mcontinent[0m[0m = "EU"
+        }
+    }
+
+[1m  # module.records.aws_route53_record.this["test CNAME test-primary"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "test.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"test.example.com.",
+        ]
+      [32m+[0m [0m[1m[0mset_identifier[0m[0m  = "test-primary"
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 5
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "CNAME"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0mweighted_routing_policy {
+          [32m+[0m [0m[1m[0mweight[0m[0m = 90
+        }
+    }
+
+[1m  # module.records.aws_route53_record.this["test CNAME test-secondary"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "test.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"test2.example.com.",
+        ]
+      [32m+[0m [0m[1m[0mset_identifier[0m[0m  = "test-secondary"
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 5
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "CNAME"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0mweighted_routing_policy {
+          [32m+[0m [0m[1m[0mweight[0m[0m = 10
+        }
+    }
+
+[1m  # module.records_with_full_names.data.aws_route53_zone.this[0][0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mcaller_reference[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_description[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_principal[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_zone[0m[0m               = false
+      [32m+[0m [0m[1m[0mresource_record_set_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                    = (known after apply)
+    }
+
+[1m  # module.records_with_full_names.aws_route53_record.this["web A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "web.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.11",
+          [32m+[0m [0m"10.10.10.12",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.records_with_full_names.aws_route53_record.this["with-full-name-override.app.terraform-aws-modules-example.com A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "with-full-name-override.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.terragrunt.data.aws_route53_zone.this[0][0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mcaller_reference[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_description[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_principal[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_zone[0m[0m               = false
+      [32m+[0m [0m[1m[0mresource_record_set_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                    = (known after apply)
+    }
+
+[1m  # module.terragrunt.aws_route53_record.this["new A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "new.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.terragrunt.aws_route53_record.this["new2 A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "new2.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.11",
+          [32m+[0m [0m"10.10.10.12",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.terragrunt.aws_route53_record.this["s3-bucket-terragrunt A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "s3-bucket-terragrunt.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0malias {
+          [32m+[0m [0m[1m[0mevaluate_target_health[0m[0m = false
+          [32m+[0m [0m[1m[0mname[0m[0m                   = "s3-website-eu-west-1.amazonaws.com"
+          [32m+[0m [0m[1m[0mzone_id[0m[0m                = "Z1BKCTXD74EZPE"
+        }
+    }
+
+[1m  # module.zones.aws_route53_zone.this["app.terraform-aws-modules-example.com"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m           = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mdelegation_set_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mforce_destroy[0m[0m     = false
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m              = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m              = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "app.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m          = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "app.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mzone_id[0m[0m           = (known after apply)
+
+      [32m+[0m [0mvpc {
+          [32m+[0m [0m[1m[0mvpc_id[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mvpc_region[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.zones.aws_route53_zone.this["private-vpc.terraform-aws-modules-example.com"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m       = "private-vpc.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mforce_destroy[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m          = "terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m          = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "private-vpc.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m      = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "private-vpc.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mzone_id[0m[0m       = (known after apply)
+
+      [32m+[0m [0mvpc {
+          [32m+[0m [0m[1m[0mvpc_id[0m[0m     = "vpc-0daf0f8763c289dad"
+          [32m+[0m [0m[1m[0mvpc_region[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.zones.aws_route53_zone.this["terraform-aws-modules-example.com"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m       = "terraform-aws-modules-example.com (production)"
+      [32m+[0m [0m[1m[0mforce_destroy[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m          = "terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m          = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m      = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mzone_id[0m[0m       = (known after apply)
+    }
+
+[0m[1mPlan:[0m 13 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0mroute53_delegation_set_id[0m[0m           = {
+      [32m+[0m [0mmain = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_delegation_set_name_servers[0m[0m = {
+      [32m+[0m [0mmain = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_fqdn[0m[0m                 = {
+      [32m+[0m [0m" A"                        = (known after apply)
+      [32m+[0m [0m"geo CNAME europe"          = (known after apply)
+      [32m+[0m [0m"test CNAME test-primary"   = (known after apply)
+      [32m+[0m [0m"test CNAME test-secondary" = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_name[0m[0m                 = {
+      [32m+[0m [0m" A"                        = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"geo CNAME europe"          = "geo.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"test CNAME test-primary"   = "test.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"test CNAME test-secondary" = "test.app.terraform-aws-modules-example.com"
+    }
+  [32m+[0m [0m[1m[0mroute53_zone_name[0m[0m                   = {
+      [32m+[0m [0m"app.terraform-aws-modules-example.com"         = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"private-vpc.terraform-aws-modules-example.com" = "terraform-aws-modules-example.com"
+      [32m+[0m [0m"terraform-aws-modules-example.com"             = "terraform-aws-modules-example.com"
+    }
+  [32m+[0m [0m[1m[0mroute53_zone_name_servers[0m[0m           = {
+      [32m+[0m [0m"app.terraform-aws-modules-example.com"         = (known after apply)
+      [32m+[0m [0m"private-vpc.terraform-aws-modules-example.com" = (known after apply)
+      [32m+[0m [0m"terraform-aws-modules-example.com"             = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_zone_zone_id[0m[0m                = {
+      [32m+[0m [0m"app.terraform-aws-modules-example.com"         = (known after apply)
+      [32m+[0m [0m"private-vpc.terraform-aws-modules-example.com" = (known after apply)
+      [32m+[0m [0m"terraform-aws-modules-example.com"             = (known after apply)
+    }
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2022-09-20T21:48:36-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/globals/route53
+time=2022-09-20T21:48:36-05:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/data-storage/rds-db/databases/devrdsesb01-complete-postgres Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-20T21:48:37-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsesb01-complete-postgres prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsesb01-complete-postgres] 
+time=2022-09-20T21:48:37-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./use1/data-storage/rds-db/databases/devrdsmedia01-complete-postgres Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-20T21:48:38-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsmedia01-complete-postgres prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsmedia01-complete-postgres] 
+time=2022-09-20T21:48:38-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ✅ ./use1/data-storage/rds-db/databases/complete-postgres Passed  ===
+=== ⛔ ./use1/network/vpn Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-20T21:48:45-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/vpn prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/vpn] 
+time=2022-09-20T21:48:45-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./use1/network/direct-connect Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-20T21:48:45-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/direct-connect prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/direct-connect] 
+time=2022-09-20T21:48:45-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./use1/network/vpc Drift Detected ===
+[0m[1mmodule.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-04323c5e20fdd045c][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-075e8042daa6bd9f5][0m
+[0m[1mmodule.vpc.aws_eip.nat[2]: Refreshing state... [id=eipalloc-0866945f1e17558cb][0m
+[0m[1mmodule.vpc.aws_vpc.main: Refreshing state... [id=vpc-0daf0f8763c289dad][0m
+[0m[1mmodule.vpc.aws_internet_gateway.gw: Refreshing state... [id=igw-08eb8b00244d30c00][0m
+[0m[1mmodule.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-0b41f7c6e2a9c5aa6][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-07e5e16aef3260c37][0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-012d5a23a412af383][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-0ce179ee35c182108][0m
+[0m[1mmodule.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-0c2600369cb514b92][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-0b3022dcfd65d77c5][0m
+[0m[1mmodule.vpc.aws_route_table.internet-route: Refreshing state... [id=rtb-09611124898161be4][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[2]: Refreshing state... [id=nat-0ef20d4d7b3328754][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[0]: Refreshing state... [id=nat-01a277d2e8282c7aa][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[1]: Refreshing state... [id=nat-0a2dec2dee7d81019][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0a1b7d1073ee4b2bc][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0ec7657bbca90f528][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-084fd6980f7d09b46][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[1]: Refreshing state... [id=rtb-082628b849d6bea29][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[0]: Refreshing state... [id=rtb-093fe62d4ff6875a6][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[2]: Refreshing state... [id=rtb-03e64a1f724049dd9][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0677ef1353c39491b][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0195c74117229ce87][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-08f44036986af13e0][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.vpc.aws_route_table.nat-route[0][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-093fe62d4ff6875a6"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-01a277d2e8282c7aa"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-01a277d2e8282c7aa"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-1-Production"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[1][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-082628b849d6bea29"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0a2dec2dee7d81019"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0a2dec2dee7d81019"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-2-Production"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[2][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-03e64a1f724049dd9"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0ef20d4d7b3328754"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0ef20d4d7b3328754"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-3-Production"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2022-09-20T21:48:52-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/vpc
+time=2022-09-20T21:48:52-05:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ✅ ./use1/network/tgw Passed  ===
+=== 🚧 ./use1/services/argocd Drift Detected ===
+[0m[1mnull_resource.merge_kubeconfig: Refreshing state... [id=7893133694031712857][0m
+[0m[1mdata.kubectl_file_documents.my-nginx-app: Reading...[0m[0m
+[0m[1mdata.kubectl_file_documents.namespace: Reading...[0m[0m
+[0m[1mdata.kubectl_file_documents.my-nginx-app: Read complete after 0s [id=adc0a6c690d9d2593ba27f088a9993266363c081ebd86fd77f5fe2d740594a61][0m
+[0m[1mdata.kubectl_file_documents.namespace: Read complete after 0s [id=43737de6d4c488e9eb76091f3aabd65f64c401cd8501f1fef3e386ce4b5ececb][0m
+[0m[1mdata.kubectl_file_documents.argocd: Reading...[0m[0m
+[0m[1mkubectl_manifest.namespace[0]: Refreshing state... [id=/api/v1/namespaces/argocd][0m
+[0m[1mdata.kubectl_file_documents.argocd: Read complete after 0s [id=6f69fa645fd0319971377b137d85d52e7201ad55ff88a6421e5094dfd67c151c][0m
+[0m[1mkubectl_manifest.argocd[36]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-dex-server-network-policy][0m
+[0m[1mkubectl_manifest.argocd[9]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[11]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[19]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-gpg-keys-cm][0m
+[0m[1mkubectl_manifest.argocd[7]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[37]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-redis-network-policy][0m
+[0m[1mkubectl_manifest.argocd[14]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[17]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[27]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-repo-server][0m
+[0m[1mkubectl_manifest.argocd[31]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[35]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-application-controller-network-policy][0m
+[0m[1mkubectl_manifest.argocd[28]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[39]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-server-network-policy][0m
+[0m[1mkubectl_manifest.argocd[5]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[24]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[13]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[4]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[33]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[38]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-repo-server-network-policy][0m
+[0m[1mkubectl_manifest.argocd[0]: Refreshing state... [id=/apis/apiextensions.k8s.io/v1/customresourcedefinitions/applications.argoproj.io][0m
+[0m[1mkubectl_manifest.argocd[3]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[12]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[8]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[29]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-server-metrics][0m
+[0m[1mkubectl_manifest.argocd[26]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[16]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[32]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-repo-server][0m
+[0m[1mkubectl_manifest.argocd[22]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-tls-certs-cm][0m
+[0m[1mkubectl_manifest.argocd[21]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-ssh-known-hosts-cm][0m
+[0m[1mkubectl_manifest.argocd[2]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[1]: Refreshing state... [id=/apis/apiextensions.k8s.io/v1/customresourcedefinitions/appprojects.argoproj.io][0m
+[0m[1mkubectl_manifest.argocd[25]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-metrics][0m
+[0m[1mkubectl_manifest.argocd[20]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-rbac-cm][0m
+[0m[1mkubectl_manifest.argocd[15]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[18]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-cm][0m
+[0m[1mkubectl_manifest.argocd[40]: Refreshing state... [id=/apis/argoproj.io/v1alpha1/namespaces/argocd/appprojects/devops][0m
+[0m[1mkubectl_manifest.argocd[23]: Refreshing state... [id=/api/v1/namespaces/argocd/secrets/argocd-secret][0m
+[0m[1mkubectl_manifest.argocd[6]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[30]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[34]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/statefulsets/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[10]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/argocd-application-controller][0m
+[0m[1mkubectl_manifest.my-nginx-app[0]: Refreshing state... [id=/apis/argoproj.io/v1alpha1/namespaces/argocd/applications/my-nginx][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+[31m-[0m/[32m+[0m destroy and then create replacement
+[0m
+Terraform will perform the following actions:
+
+[1m  # null_resource.merge_kubeconfig[0m must be [1m[31mreplaced[0m[0m
+[0m[31m-[0m/[32m+[0m[0m resource "null_resource" "merge_kubeconfig" {
+      [33m~[0m [0m[1m[0mid[0m[0m       = "7893133694031712857" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mtriggers[0m[0m = {
+          [31m-[0m [0m"always" = "2022-09-20T00:19:55Z"
+        } [33m->[0m [0m(known after apply) [31m# forces replacement[0m[0m
+    }
+
+[0m[1mPlan:[0m 1 to add, 0 to change, 1 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2022-09-20T21:49:05-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/services/argocd
+time=2022-09-20T21:49:05-05:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/services/ecr Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-20T21:49:05-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/services/ecr prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/services/ecr] 
+time=2022-09-20T21:49:05-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ✅ ./use1/services/eks Passed  ===
+=== ✅ ./use1/services/ec2 Passed  ===
+=== ✅ ./globals/s3 Passed  ===
+=== ✅ ./globals/iam Passed  ===
+=== ✅ ./globals/ram Passed  ===
+=== 🚧 ./globals/route53 Drift Detected ===
+[0m[1mdata.terraform_remote_state.vpc: Reading...[0m[0m
+[0m[1mdata.terraform_remote_state.vpc: Read complete after 1s[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+ [36m<=[0m read (data resources)
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.delegation_sets.aws_route53_delegation_set.this["main"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_delegation_set" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m          = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mname_servers[0m[0m = (known after apply)
+    }
+
+[1m  # module.records.data.aws_route53_zone.this[0][0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mcaller_reference[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_description[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_principal[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_zone[0m[0m               = false
+      [32m+[0m [0m[1m[0mresource_record_set_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                    = (known after apply)
+    }
+
+[1m  # module.records.aws_route53_record.this[" A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.records.aws_route53_record.this["geo CNAME europe"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "geo.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"europe.test.example.com.",
+        ]
+      [32m+[0m [0m[1m[0mset_identifier[0m[0m  = "europe"
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 5
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "CNAME"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0mgeolocation_routing_policy {
+          [32m+[0m [0m[1m[0mcontinent[0m[0m = "EU"
+        }
+    }
+
+[1m  # module.records.aws_route53_record.this["test CNAME test-primary"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "test.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"test.example.com.",
+        ]
+      [32m+[0m [0m[1m[0mset_identifier[0m[0m  = "test-primary"
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 5
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "CNAME"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0mweighted_routing_policy {
+          [32m+[0m [0m[1m[0mweight[0m[0m = 90
+        }
+    }
+
+[1m  # module.records.aws_route53_record.this["test CNAME test-secondary"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "test.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"test2.example.com.",
+        ]
+      [32m+[0m [0m[1m[0mset_identifier[0m[0m  = "test-secondary"
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 5
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "CNAME"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0mweighted_routing_policy {
+          [32m+[0m [0m[1m[0mweight[0m[0m = 10
+        }
+    }
+
+[1m  # module.records_with_full_names.data.aws_route53_zone.this[0][0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mcaller_reference[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_description[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_principal[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_zone[0m[0m               = false
+      [32m+[0m [0m[1m[0mresource_record_set_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                    = (known after apply)
+    }
+
+[1m  # module.records_with_full_names.aws_route53_record.this["web A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "web.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.11",
+          [32m+[0m [0m"10.10.10.12",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.records_with_full_names.aws_route53_record.this["with-full-name-override.app.terraform-aws-modules-example.com A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "with-full-name-override.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.terragrunt.data.aws_route53_zone.this[0][0m will be read during apply[0m
+  # (depends on a resource or a module with changes pending)[0m
+[0m [36m<=[0m[0m data "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mcaller_reference[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                         = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_description[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mlinked_service_principal[0m[0m   = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m                       = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_zone[0m[0m               = false
+      [32m+[0m [0m[1m[0mresource_record_set_count[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mzone_id[0m[0m                    = (known after apply)
+    }
+
+[1m  # module.terragrunt.aws_route53_record.this["new A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "new.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.terragrunt.aws_route53_record.this["new2 A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "new2.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.11",
+          [32m+[0m [0m"10.10.10.12",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+    }
+
+[1m  # module.terragrunt.aws_route53_record.this["s3-bucket-terragrunt A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "s3-bucket-terragrunt.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = (known after apply)
+
+      [32m+[0m [0malias {
+          [32m+[0m [0m[1m[0mevaluate_target_health[0m[0m = false
+          [32m+[0m [0m[1m[0mname[0m[0m                   = "s3-website-eu-west-1.amazonaws.com"
+          [32m+[0m [0m[1m[0mzone_id[0m[0m                = "Z1BKCTXD74EZPE"
+        }
+    }
+
+[1m  # module.zones.aws_route53_zone.this["app.terraform-aws-modules-example.com"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m           = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mdelegation_set_id[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0mforce_destroy[0m[0m     = false
+      [32m+[0m [0m[1m[0mid[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m              = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m      = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m              = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "app.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m          = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "app.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mzone_id[0m[0m           = (known after apply)
+
+      [32m+[0m [0mvpc {
+          [32m+[0m [0m[1m[0mvpc_id[0m[0m     = (known after apply)
+          [32m+[0m [0m[1m[0mvpc_region[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.zones.aws_route53_zone.this["private-vpc.terraform-aws-modules-example.com"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m       = "private-vpc.terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mforce_destroy[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m          = "terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m          = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "private-vpc.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m      = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "private-vpc.terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mzone_id[0m[0m       = (known after apply)
+
+      [32m+[0m [0mvpc {
+          [32m+[0m [0m[1m[0mvpc_id[0m[0m     = "vpc-0daf0f8763c289dad"
+          [32m+[0m [0m[1m[0mvpc_region[0m[0m = (known after apply)
+        }
+    }
+
+[1m  # module.zones.aws_route53_zone.this["terraform-aws-modules-example.com"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_zone" "this" {
+      [32m+[0m [0m[1m[0marn[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mcomment[0m[0m       = "terraform-aws-modules-example.com (production)"
+      [32m+[0m [0m[1m[0mforce_destroy[0m[0m = false
+      [32m+[0m [0m[1m[0mid[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m          = "terraform-aws-modules-example.com"
+      [32m+[0m [0m[1m[0mname_servers[0m[0m  = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m          = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m      = {
+          [32m+[0m [0m"ManagedBy" = "Terraform"
+          [32m+[0m [0m"Name"      = "terraform-aws-modules-example.com"
+        }
+      [32m+[0m [0m[1m[0mzone_id[0m[0m       = (known after apply)
+    }
+
+[0m[1mPlan:[0m 13 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0mroute53_delegation_set_id[0m[0m           = {
+      [32m+[0m [0mmain = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_delegation_set_name_servers[0m[0m = {
+      [32m+[0m [0mmain = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_fqdn[0m[0m                 = {
+      [32m+[0m [0m" A"                        = (known after apply)
+      [32m+[0m [0m"geo CNAME europe"          = (known after apply)
+      [32m+[0m [0m"test CNAME test-primary"   = (known after apply)
+      [32m+[0m [0m"test CNAME test-secondary" = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_name[0m[0m                 = {
+      [32m+[0m [0m" A"                        = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"geo CNAME europe"          = "geo.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"test CNAME test-primary"   = "test.app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"test CNAME test-secondary" = "test.app.terraform-aws-modules-example.com"
+    }
+  [32m+[0m [0m[1m[0mroute53_zone_name[0m[0m                   = {
+      [32m+[0m [0m"app.terraform-aws-modules-example.com"         = "app.terraform-aws-modules-example.com"
+      [32m+[0m [0m"private-vpc.terraform-aws-modules-example.com" = "terraform-aws-modules-example.com"
+      [32m+[0m [0m"terraform-aws-modules-example.com"             = "terraform-aws-modules-example.com"
+    }
+  [32m+[0m [0m[1m[0mroute53_zone_name_servers[0m[0m           = {
+      [32m+[0m [0m"app.terraform-aws-modules-example.com"         = (known after apply)
+      [32m+[0m [0m"private-vpc.terraform-aws-modules-example.com" = (known after apply)
+      [32m+[0m [0m"terraform-aws-modules-example.com"             = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_zone_zone_id[0m[0m                = {
+      [32m+[0m [0m"app.terraform-aws-modules-example.com"         = (known after apply)
+      [32m+[0m [0m"private-vpc.terraform-aws-modules-example.com" = (known after apply)
+      [32m+[0m [0m"terraform-aws-modules-example.com"             = (known after apply)
+    }
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2022-09-21T12:15:45-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/globals/route53
+time=2022-09-21T12:15:45-05:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/data-storage/rds-db/databases/devrdsesb01-complete-postgres Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-21T12:15:45-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsesb01-complete-postgres prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsesb01-complete-postgres] 
+time=2022-09-21T12:15:45-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./use1/data-storage/rds-db/databases/devrdsmedia01-complete-postgres Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-21T12:15:46-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsmedia01-complete-postgres prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/data-storage/rds-db/databases/devrdsmedia01-complete-postgres] 
+time=2022-09-21T12:15:46-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ✅ ./use1/data-storage/rds-db/databases/complete-postgres Passed  ===
+=== ⛔ ./use1/network/vpn Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-21T12:15:53-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/vpn prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/vpn] 
+time=2022-09-21T12:15:53-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./use1/network/direct-connect Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-21T12:15:54-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/direct-connect prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/direct-connect] 
+time=2022-09-21T12:15:54-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./use1/network/vpc Drift Detected ===
+[0m[1mmodule.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-04323c5e20fdd045c][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-075e8042daa6bd9f5][0m
+[0m[1mmodule.vpc.aws_vpc.main: Refreshing state... [id=vpc-0daf0f8763c289dad][0m
+[0m[1mmodule.vpc.aws_eip.nat[2]: Refreshing state... [id=eipalloc-0866945f1e17558cb][0m
+[0m[1mmodule.vpc.aws_internet_gateway.gw: Refreshing state... [id=igw-08eb8b00244d30c00][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-0b3022dcfd65d77c5][0m
+[0m[1mmodule.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-0c2600369cb514b92][0m
+[0m[1mmodule.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-0b41f7c6e2a9c5aa6][0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-012d5a23a412af383][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-0ce179ee35c182108][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-07e5e16aef3260c37][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[1]: Refreshing state... [id=nat-0a2dec2dee7d81019][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[2]: Refreshing state... [id=nat-0ef20d4d7b3328754][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[0]: Refreshing state... [id=nat-01a277d2e8282c7aa][0m
+[0m[1mmodule.vpc.aws_route_table.internet-route: Refreshing state... [id=rtb-09611124898161be4][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0ec7657bbca90f528][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0a1b7d1073ee4b2bc][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-084fd6980f7d09b46][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[0]: Refreshing state... [id=rtb-093fe62d4ff6875a6][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[1]: Refreshing state... [id=rtb-082628b849d6bea29][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[2]: Refreshing state... [id=rtb-03e64a1f724049dd9][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0677ef1353c39491b][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-08f44036986af13e0][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0195c74117229ce87][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.vpc.aws_route_table.nat-route[0][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-093fe62d4ff6875a6"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-01a277d2e8282c7aa"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-01a277d2e8282c7aa"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-1-Production"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[1][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-082628b849d6bea29"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0a2dec2dee7d81019"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0a2dec2dee7d81019"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-2-Production"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[2][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-03e64a1f724049dd9"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0ef20d4d7b3328754"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0ef20d4d7b3328754"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-3-Production"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2022-09-21T12:16:02-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/network/vpc
+time=2022-09-21T12:16:02-05:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ✅ ./use1/network/tgw Passed  ===
+=== 🚧 ./use1/services/argocd Drift Detected ===
+[0m[1mnull_resource.merge_kubeconfig: Refreshing state... [id=7893133694031712857][0m
+[0m[1mdata.kubectl_file_documents.my-nginx-app: Reading...[0m[0m
+[0m[1mdata.kubectl_file_documents.namespace: Reading...[0m[0m
+[0m[1mdata.kubectl_file_documents.argocd: Reading...[0m[0m
+[0m[1mdata.kubectl_file_documents.namespace: Read complete after 0s [id=43737de6d4c488e9eb76091f3aabd65f64c401cd8501f1fef3e386ce4b5ececb][0m
+[0m[1mdata.kubectl_file_documents.my-nginx-app: Read complete after 0s [id=adc0a6c690d9d2593ba27f088a9993266363c081ebd86fd77f5fe2d740594a61][0m
+[0m[1mkubectl_manifest.namespace[0]: Refreshing state... [id=/api/v1/namespaces/argocd][0m
+[0m[1mdata.kubectl_file_documents.argocd: Read complete after 1s [id=6f69fa645fd0319971377b137d85d52e7201ad55ff88a6421e5094dfd67c151c][0m
+[0m[1mkubectl_manifest.argocd[35]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-application-controller-network-policy][0m
+[0m[1mkubectl_manifest.argocd[20]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-rbac-cm][0m
+[0m[1mkubectl_manifest.argocd[39]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-server-network-policy][0m
+[0m[1mkubectl_manifest.argocd[9]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[2]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[31]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[10]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[5]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[12]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[19]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-gpg-keys-cm][0m
+[0m[1mkubectl_manifest.argocd[27]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-repo-server][0m
+[0m[1mkubectl_manifest.argocd[22]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-tls-certs-cm][0m
+[0m[1mkubectl_manifest.argocd[24]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[34]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/statefulsets/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[38]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-repo-server-network-policy][0m
+[0m[1mkubectl_manifest.argocd[4]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[28]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[37]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-redis-network-policy][0m
+[0m[1mkubectl_manifest.argocd[15]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[0]: Refreshing state... [id=/apis/apiextensions.k8s.io/v1/customresourcedefinitions/applications.argoproj.io][0m
+[0m[1mkubectl_manifest.argocd[1]: Refreshing state... [id=/apis/apiextensions.k8s.io/v1/customresourcedefinitions/appprojects.argoproj.io][0m
+[0m[1mkubectl_manifest.argocd[26]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[36]: Refreshing state... [id=/apis/networking.k8s.io/v1/namespaces/argocd/networkpolicys/argocd-dex-server-network-policy][0m
+[0m[1mkubectl_manifest.argocd[30]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[21]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-ssh-known-hosts-cm][0m
+[0m[1mkubectl_manifest.argocd[3]: Refreshing state... [id=/api/v1/namespaces/argocd/serviceaccounts/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[14]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[40]: Refreshing state... [id=/apis/argoproj.io/v1alpha1/namespaces/argocd/appprojects/devops][0m
+[0m[1mkubectl_manifest.argocd[29]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-server-metrics][0m
+[0m[1mkubectl_manifest.argocd[8]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-redis][0m
+[0m[1mkubectl_manifest.argocd[23]: Refreshing state... [id=/api/v1/namespaces/argocd/secrets/argocd-secret][0m
+[0m[1mkubectl_manifest.argocd[25]: Refreshing state... [id=/api/v1/namespaces/argocd/services/argocd-metrics][0m
+[0m[1mkubectl_manifest.argocd[17]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[11]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterroles/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[18]: Refreshing state... [id=/api/v1/namespaces/argocd/configmaps/argocd-cm][0m
+[0m[1mkubectl_manifest.argocd[33]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-server][0m
+[0m[1mkubectl_manifest.argocd[13]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/rolebindings/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[7]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-dex-server][0m
+[0m[1mkubectl_manifest.argocd[6]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/namespaces/argocd/roles/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[16]: Refreshing state... [id=/apis/rbac.authorization.k8s.io/v1/clusterrolebindings/argocd-application-controller][0m
+[0m[1mkubectl_manifest.argocd[32]: Refreshing state... [id=/apis/apps/v1/namespaces/argocd/deployments/argocd-repo-server][0m
+[0m[1mkubectl_manifest.my-nginx-app[0]: Refreshing state... [id=/apis/argoproj.io/v1alpha1/namespaces/argocd/applications/my-nginx][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+[31m-[0m/[32m+[0m destroy and then create replacement
+[0m
+Terraform will perform the following actions:
+
+[1m  # null_resource.merge_kubeconfig[0m must be [1m[31mreplaced[0m[0m
+[0m[31m-[0m/[32m+[0m[0m resource "null_resource" "merge_kubeconfig" {
+      [33m~[0m [0m[1m[0mid[0m[0m       = "7893133694031712857" [33m->[0m [0m(known after apply)
+      [33m~[0m [0m[1m[0mtriggers[0m[0m = {
+          [31m-[0m [0m"always" = "2022-09-20T00:19:55Z"
+        } [33m->[0m [0m(known after apply) [31m# forces replacement[0m[0m
+    }
+
+[0m[1mPlan:[0m 1 to add, 0 to change, 1 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2022-09-21T12:16:12-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/services/argocd
+time=2022-09-21T12:16:12-05:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/services/ecr Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2022-09-21T12:16:13-05:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/services/ecr prefix=[/Users/geoffreyscarvell/github/A100-devops-terraform-infrastructure/aws-0197-6646-7906/non-prod/use1/services/ecr] 
+time=2022-09-21T12:16:13-05:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ✅ ./use1/services/eks Passed  ===
+=== ✅ ./use1/services/ec2 Passed  ===
+=== ⛔ ./globals/iam/roles/alb-ingress-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-17T09:46:32-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role prefix=[/Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role] 
+time=2023-02-17T09:46:32-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-external-dns-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-17T09:46:33-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role prefix=[/Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role] 
+time=2023-02-17T09:46:33-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-app-mesh-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-17T09:46:33-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role prefix=[/Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role] 
+time=2023-02-17T09:46:33-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-cert-manager-role Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-17T09:46:34-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role prefix=[/Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role] 
+time=2023-02-17T09:46:34-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./globals/route53 Drift Detected ===
+[0m[1mdata.terraform_remote_state.vpc: Reading...[0m[0m
+[0m[1mdata.terraform_remote_state.vpc: Read complete after 0s[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Reading...[0m[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Read complete after 1s [id=Z02508202FLLB6FG0WHJW][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.records.aws_route53_record.this[" A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "geoff1-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = "Z02508202FLLB6FG0WHJW"
+    }
+
+[0m[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0mroute53_record_fqdn[0m[0m = {
+      [32m+[0m [0m" A" = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_name[0m[0m = {
+      [32m+[0m [0m" A" = "geoff1-example.com"
+    }
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-02-17T09:46:39-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/globals/route53
+time=2023-02-17T09:46:39-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/data-storage/postgres Error Occured ===
+[0m[1mInitializing modules...[0m
+- db in ../../../../modules/db
+- db.db_instance in ../../../../modules/db_instance
+- db.db_option_group in ../../../../modules/db_option_group
+- db.db_parameter_group in ../../../../modules/db_parameter_group
+- db.db_subnet_group in ../../../../modules/db_subnet_group
+- db_default in ../../../../modules
+- db_disabled in ../../../../modules
+Downloading registry.terraform.io/terraform-aws-modules/security-group/aws 4.17.1 for security_group...
+- security_group in .terraform/modules/security_group
+
+[0m[1mInitializing the backend...[0m
+[0m[32m
+Successfully configured the backend "s3"! Terraform will automatically
+use this backend unless the backend configuration changes.[0m
+
+[0m[1mInitializing provider plugins...[0m
+- terraform.io/builtin/terraform is built in to Terraform
+- Finding hashicorp/aws versions matching ">= 2.49.0, >= 3.29.0"...
+- Finding hashicorp/random versions matching ">= 2.2.0, >= 3.1.0"...
+- Installing hashicorp/aws v4.55.0...
+- Installed hashicorp/aws v4.55.0 (signed by HashiCorp)
+- Installing hashicorp/random v3.4.3...
+- Installed hashicorp/random v3.4.3 (signed by HashiCorp)
+
+Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.[0m
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 122, in module "db_default":
+[31m│[0m [0m 122:   [4midentifier[0m = "${local.name}-default"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "identifier" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 124, in module "db_default":
+[31m│[0m [0m 124:   [4mcreate_db_option_group[0m    = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_option_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 125, in module "db_default":
+[31m│[0m [0m 125:   [4mcreate_db_parameter_group[0m = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_parameter_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 128, in module "db_default":
+[31m│[0m [0m 128:   [4mengine[0m               = "postgres"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 129, in module "db_default":
+[31m│[0m [0m 129:   [4mengine_version[0m       = "14.3"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 130, in module "db_default":
+[31m│[0m [0m 130:   [4mfamily[0m               = "postgres14" # DB parameter group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "family" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 131, in module "db_default":
+[31m│[0m [0m 131:   [4mmajor_engine_version[0m = "14.3"       # DB option group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "major_engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 132, in module "db_default":
+[31m│[0m [0m 132:   [4minstance_class[0m       = "db.t3.large"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "instance_class" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 134, in module "db_default":
+[31m│[0m [0m 134:   [4mallocated_storage[0m = 20[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "allocated_storage" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 139, in module "db_default":
+[31m│[0m [0m 139:   [4mname[0m                   = "completePostgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "name" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 140, in module "db_default":
+[31m│[0m [0m 140:   [4musername[0m               = "complete_postgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "username" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 141, in module "db_default":
+[31m│[0m [0m 141:   [4mcreate_random_password[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_random_password" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 142, in module "db_default":
+[31m│[0m [0m 142:   [4mrandom_password_length[0m = 12[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "random_password_length" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 143, in module "db_default":
+[31m│[0m [0m 143:   [4mport[0m                   = 5432[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "port" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 145, in module "db_default":
+[31m│[0m [0m 145:   [4msubnet_ids[0m             = data.terraform_remote_state.vpc.outputs.aws_subnets_private[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "subnet_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 146, in module "db_default":
+[31m│[0m [0m 146:   [4mvpc_security_group_ids[0m = [module.security_group.security_group_id][0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "vpc_security_group_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 148, in module "db_default":
+[31m│[0m [0m 148:   [4mmaintenance_window[0m = "Mon:00:00-Mon:03:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "maintenance_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 149, in module "db_default":
+[31m│[0m [0m 149:   [4mbackup_window[0m      = "03:00-06:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 151, in module "db_default":
+[31m│[0m [0m 151:   [4mbackup_retention_period[0m = 0[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_retention_period" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 153, in module "db_default":
+[31m│[0m [0m 153:   [4mtags[0m = local.tags[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "tags" is not expected here.
+[31m╵[0m[0m
+time=2023-02-17T09:46:55-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/use1/data-storage/postgres
+time=2023-02-17T09:46:55-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./use1/network/vpc Drift Detected ===
+[0m[1mmodule.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-097cd59a4dcc9de2f][0m
+[0m[1mmodule.vpc.aws_vpc.main: Refreshing state... [id=vpc-009fcc1930b268fe2][0m
+[0m[1mmodule.vpc.aws_eip.nat[2]: Refreshing state... [id=eipalloc-01d8e6aaf3238559b][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-0c165fd35d3f8f8a4][0m
+[0m[1mmodule.vpc.aws_internet_gateway.gw: Refreshing state... [id=igw-0f234ee637a2cd265][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-08378229537b1e256][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-014fd92d580bd96c4][0m
+[0m[1mmodule.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-01ae31dab16731d30][0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-019af7ab3189bb345][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-053f56c38a334d2c3][0m
+[0m[1mmodule.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-06df63e21778d2bd7][0m
+[0m[1mmodule.vpc.aws_route_table.internet-route: Refreshing state... [id=rtb-09fa89add8535b7d1][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[0]: Refreshing state... [id=nat-032d38755c482f0cb][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[1]: Refreshing state... [id=nat-0e7f272970df6b8b2][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[2]: Refreshing state... [id=nat-076c0671723d95bfc][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-048baf7f0586ded5a][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-08cba7208332da81d][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0d859d70c8aa22b0f][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[2]: Refreshing state... [id=rtb-0d4d88322b9406611][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[0]: Refreshing state... [id=rtb-08dedd1b33011922f][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[1]: Refreshing state... [id=rtb-039e84550a07f3449][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-0eed291c85a918465][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-0ecd56bf99fe24abd][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-028239320a212ebeb][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # module.vpc.aws_eip.nat[0][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-0c21252fd10b42aa4"
+        [1m[0mid[0m[0m                   = "eipalloc-0c165fd35d3f8f8a4"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0098b80119d0081f7"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-0-67.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.0.67"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[1][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-02439500e7e7e67c5"
+        [1m[0mid[0m[0m                   = "eipalloc-097cd59a4dcc9de2f"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0d156389e1dcf31dc"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-1-138.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.1.138"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[2][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-047b0316cd072c308"
+        [1m[0mid[0m[0m                   = "eipalloc-01d8e6aaf3238559b"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0c3ae4830f8ae0759"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-2-105.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.2.105"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.vpc.aws_route_table.nat-route[0][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-08dedd1b33011922f"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-032d38755c482f0cb"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-032d38755c482f0cb"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-1-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[1][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-039e84550a07f3449"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0e7f272970df6b8b2"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0e7f272970df6b8b2"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-2-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[2][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-0d4d88322b9406611"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-076c0671723d95bfc"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-076c0671723d95bfc"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-3-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-02-17T09:47:02-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/github-effectual/devops-terraform-infrastructure/demo/use1/network/vpc
+time=2023-02-17T09:47:02-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ✅ ./use1/services/argocd Passed  ===
+=== ✅ ./use1/services/eks Passed  ===
