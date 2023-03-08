@@ -1,5 +1,14 @@
 # terraform-infrastructure
-1) Download and install terraform and terragrunt
+
+# What this repo does
+
+1) Deploys an AWS VPC and the following services using terraform: EKS, Route53, EKS, Argocd
+2) Has a drift script that ensure what exists in this repo is what is deployed to AWS, this is a gitops principal (git is the source of truth)
+
+# Instructions
+
+
+1) Download and install terraform and terragrunt, you will need your own aws account
 2) Go to the demo->use1->network->vpc directory and run 'terragrunt apply' to deploy vpc
 3) Go to the demo->use1->services->eks directory and run 'terragrunt apply' to deploy eks
 4) Go the the demo->use1->services->argocd directory and run 'terragrunt apply' to install argocd
