@@ -1917,3 +1917,1527 @@ time=2023-02-17T09:47:02-06:00 level=error msg=1 error occurred:
 
 === ✅ ./use1/services/argocd Passed  ===
 === ✅ ./use1/services/eks Passed  ===
+=== ⛔ ./globals/iam/roles/alb-ingress-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:24:43-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role] 
+time=2023-02-28T15:24:43-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-external-dns-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:24:44-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role] 
+time=2023-02-28T15:24:44-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-app-mesh-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:24:44-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role] 
+time=2023-02-28T15:24:44-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-cert-manager-role Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:24:45-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role] 
+time=2023-02-28T15:24:45-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./globals/route53 Drift Detected ===
+[0m[1mdata.terraform_remote_state.vpc: Reading...[0m[0m
+[0m[1mdata.terraform_remote_state.vpc: Read complete after 0s[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Reading...[0m[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Read complete after 1s [id=Z02508202FLLB6FG0WHJW][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.records.aws_route53_record.this[" A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "geoff1-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = "Z02508202FLLB6FG0WHJW"
+    }
+
+[0m[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0mroute53_record_fqdn[0m[0m = {
+      [32m+[0m [0m" A" = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_name[0m[0m = {
+      [32m+[0m [0m" A" = "geoff1-example.com"
+    }
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-02-28T15:24:51-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/route53
+time=2023-02-28T15:24:51-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/data-storage/postgres Error Occured ===
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 122, in module "db_default":
+[31m│[0m [0m 122:   [4midentifier[0m = "${local.name}-default"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "identifier" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 124, in module "db_default":
+[31m│[0m [0m 124:   [4mcreate_db_option_group[0m    = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_option_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 125, in module "db_default":
+[31m│[0m [0m 125:   [4mcreate_db_parameter_group[0m = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_parameter_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 128, in module "db_default":
+[31m│[0m [0m 128:   [4mengine[0m               = "postgres"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 129, in module "db_default":
+[31m│[0m [0m 129:   [4mengine_version[0m       = "14.3"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 130, in module "db_default":
+[31m│[0m [0m 130:   [4mfamily[0m               = "postgres14" # DB parameter group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "family" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 131, in module "db_default":
+[31m│[0m [0m 131:   [4mmajor_engine_version[0m = "14.3"       # DB option group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "major_engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 132, in module "db_default":
+[31m│[0m [0m 132:   [4minstance_class[0m       = "db.t3.large"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "instance_class" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 134, in module "db_default":
+[31m│[0m [0m 134:   [4mallocated_storage[0m = 20[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "allocated_storage" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 139, in module "db_default":
+[31m│[0m [0m 139:   [4mname[0m                   = "completePostgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "name" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 140, in module "db_default":
+[31m│[0m [0m 140:   [4musername[0m               = "complete_postgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "username" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 141, in module "db_default":
+[31m│[0m [0m 141:   [4mcreate_random_password[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_random_password" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 142, in module "db_default":
+[31m│[0m [0m 142:   [4mrandom_password_length[0m = 12[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "random_password_length" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 143, in module "db_default":
+[31m│[0m [0m 143:   [4mport[0m                   = 5432[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "port" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 145, in module "db_default":
+[31m│[0m [0m 145:   [4msubnet_ids[0m             = data.terraform_remote_state.vpc.outputs.aws_subnets_private[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "subnet_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 146, in module "db_default":
+[31m│[0m [0m 146:   [4mvpc_security_group_ids[0m = [module.security_group.security_group_id][0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "vpc_security_group_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 148, in module "db_default":
+[31m│[0m [0m 148:   [4mmaintenance_window[0m = "Mon:00:00-Mon:03:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "maintenance_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 149, in module "db_default":
+[31m│[0m [0m 149:   [4mbackup_window[0m      = "03:00-06:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 151, in module "db_default":
+[31m│[0m [0m 151:   [4mbackup_retention_period[0m = 0[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_retention_period" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 153, in module "db_default":
+[31m│[0m [0m 153:   [4mtags[0m = local.tags[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "tags" is not expected here.
+[31m╵[0m[0m
+time=2023-02-28T15:24:55-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/use1/data-storage/postgres
+time=2023-02-28T15:24:55-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./use1/network/vpc Drift Detected ===
+[0m[1mmodule.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-040e2edcf1120b666][0m
+[0m[1mmodule.vpc.aws_vpc.main: Refreshing state... [id=vpc-077ecff070fd79cdf][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-0226a9c97cdd438d0][0m
+[0m[1mmodule.vpc.aws_eip.nat[2]: Refreshing state... [id=eipalloc-0aef0dd1a07992641][0m
+[0m[1mmodule.vpc.aws_internet_gateway.gw: Refreshing state... [id=igw-05b5aed879beb3cb2][0m
+[0m[1mmodule.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-0cbb5545d985529df][0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-065432eae193bcbaf][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0d67ce24992b23bd2][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-05f81f5c4e0c3f647][0m
+[0m[1mmodule.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-0422b2e861a47d021][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-092cbf8b7a9b898a7][0m
+[0m[1mmodule.vpc.aws_route_table.internet-route: Refreshing state... [id=rtb-035003ed209782766][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[0]: Refreshing state... [id=nat-0743cfd67f670bf52][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[1]: Refreshing state... [id=nat-05d639df73e155475][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[2]: Refreshing state... [id=nat-048b6a468409d8344][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0507b3bd0781b32eb][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0729d9d9cd4767fab][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0d589ca4a45da5c8c][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[2]: Refreshing state... [id=rtb-0e404077970a1c917][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[0]: Refreshing state... [id=rtb-0d06282f169875ef0][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[1]: Refreshing state... [id=rtb-052942e64b27743d1][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0f89c771b3f2d54c6][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-03596760110f5488e][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-03aeaf2e0a69ba1ed][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # module.vpc.aws_eip.nat[0][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-006f153892a11e57b"
+        [1m[0mid[0m[0m                   = "eipalloc-0226a9c97cdd438d0"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0d5f7113eddde5fd1"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-0-128.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.0.128"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[1][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-0a18cd117734d190f"
+        [1m[0mid[0m[0m                   = "eipalloc-040e2edcf1120b666"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-07e2e5acb49b119e5"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-1-112.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.1.112"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[2][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-035d986eddbe762c1"
+        [1m[0mid[0m[0m                   = "eipalloc-0aef0dd1a07992641"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0bf096d56d4674b70"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-2-98.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.2.98"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.vpc.aws_route_table.nat-route[0][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-0d06282f169875ef0"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0743cfd67f670bf52"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0743cfd67f670bf52"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-1-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[1][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-052942e64b27743d1"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-05d639df73e155475"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-05d639df73e155475"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-2-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[2][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-0e404077970a1c917"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-048b6a468409d8344"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-048b6a468409d8344"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-3-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-02-28T15:25:02-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/use1/network/vpc
+time=2023-02-28T15:25:02-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ✅ ./use1/services/argocd Passed  ===
+=== ✅ ./use1/services/eks Passed  ===
+=== ⛔ ./globals/iam/roles/alb-ingress-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:56:38-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role] 
+time=2023-02-28T15:56:38-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-external-dns-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:56:38-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role] 
+time=2023-02-28T15:56:38-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-app-mesh-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:56:39-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role] 
+time=2023-02-28T15:56:39-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-cert-manager-role Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-02-28T15:56:39-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role] 
+time=2023-02-28T15:56:39-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./globals/route53 Drift Detected ===
+[0m[1mdata.terraform_remote_state.vpc: Reading...[0m[0m
+[0m[1mdata.terraform_remote_state.vpc: Read complete after 1s[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Reading...[0m[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Read complete after 1s [id=Z02508202FLLB6FG0WHJW][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.records.aws_route53_record.this[" A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "geoff1-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = "Z02508202FLLB6FG0WHJW"
+    }
+
+[0m[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0mroute53_record_fqdn[0m[0m = {
+      [32m+[0m [0m" A" = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_name[0m[0m = {
+      [32m+[0m [0m" A" = "geoff1-example.com"
+    }
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-02-28T15:56:45-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/route53
+time=2023-02-28T15:56:45-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/data-storage/postgres Error Occured ===
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 122, in module "db_default":
+[31m│[0m [0m 122:   [4midentifier[0m = "${local.name}-default"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "identifier" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 124, in module "db_default":
+[31m│[0m [0m 124:   [4mcreate_db_option_group[0m    = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_option_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 125, in module "db_default":
+[31m│[0m [0m 125:   [4mcreate_db_parameter_group[0m = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_parameter_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 128, in module "db_default":
+[31m│[0m [0m 128:   [4mengine[0m               = "postgres"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 129, in module "db_default":
+[31m│[0m [0m 129:   [4mengine_version[0m       = "14.3"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 130, in module "db_default":
+[31m│[0m [0m 130:   [4mfamily[0m               = "postgres14" # DB parameter group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "family" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 131, in module "db_default":
+[31m│[0m [0m 131:   [4mmajor_engine_version[0m = "14.3"       # DB option group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "major_engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 132, in module "db_default":
+[31m│[0m [0m 132:   [4minstance_class[0m       = "db.t3.large"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "instance_class" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 134, in module "db_default":
+[31m│[0m [0m 134:   [4mallocated_storage[0m = 20[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "allocated_storage" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 139, in module "db_default":
+[31m│[0m [0m 139:   [4mname[0m                   = "completePostgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "name" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 140, in module "db_default":
+[31m│[0m [0m 140:   [4musername[0m               = "complete_postgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "username" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 141, in module "db_default":
+[31m│[0m [0m 141:   [4mcreate_random_password[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_random_password" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 142, in module "db_default":
+[31m│[0m [0m 142:   [4mrandom_password_length[0m = 12[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "random_password_length" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 143, in module "db_default":
+[31m│[0m [0m 143:   [4mport[0m                   = 5432[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "port" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 145, in module "db_default":
+[31m│[0m [0m 145:   [4msubnet_ids[0m             = data.terraform_remote_state.vpc.outputs.aws_subnets_private[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "subnet_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 146, in module "db_default":
+[31m│[0m [0m 146:   [4mvpc_security_group_ids[0m = [module.security_group.security_group_id][0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "vpc_security_group_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 148, in module "db_default":
+[31m│[0m [0m 148:   [4mmaintenance_window[0m = "Mon:00:00-Mon:03:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "maintenance_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 149, in module "db_default":
+[31m│[0m [0m 149:   [4mbackup_window[0m      = "03:00-06:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 151, in module "db_default":
+[31m│[0m [0m 151:   [4mbackup_retention_period[0m = 0[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_retention_period" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 153, in module "db_default":
+[31m│[0m [0m 153:   [4mtags[0m = local.tags[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "tags" is not expected here.
+[31m╵[0m[0m
+time=2023-02-28T15:56:49-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/use1/data-storage/postgres
+time=2023-02-28T15:56:49-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./use1/network/vpc Drift Detected ===
+[0m[1mmodule.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-040e2edcf1120b666][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-0226a9c97cdd438d0][0m
+[0m[1mmodule.vpc.aws_eip.nat[2]: Refreshing state... [id=eipalloc-0aef0dd1a07992641][0m
+[0m[1mmodule.vpc.aws_vpc.main: Refreshing state... [id=vpc-077ecff070fd79cdf][0m
+[0m[1mmodule.vpc.aws_internet_gateway.gw: Refreshing state... [id=igw-05b5aed879beb3cb2][0m
+[0m[1mmodule.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-0cbb5545d985529df][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0d67ce24992b23bd2][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-092cbf8b7a9b898a7][0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-065432eae193bcbaf][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-05f81f5c4e0c3f647][0m
+[0m[1mmodule.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-0422b2e861a47d021][0m
+[0m[1mmodule.vpc.aws_route_table.internet-route: Refreshing state... [id=rtb-035003ed209782766][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[0]: Refreshing state... [id=nat-0743cfd67f670bf52][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[1]: Refreshing state... [id=nat-05d639df73e155475][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[2]: Refreshing state... [id=nat-048b6a468409d8344][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0507b3bd0781b32eb][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-0729d9d9cd4767fab][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-0d589ca4a45da5c8c][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[1]: Refreshing state... [id=rtb-052942e64b27743d1][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[0]: Refreshing state... [id=rtb-0d06282f169875ef0][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[2]: Refreshing state... [id=rtb-0e404077970a1c917][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-03596760110f5488e][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-0f89c771b3f2d54c6][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-03aeaf2e0a69ba1ed][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # module.vpc.aws_eip.nat[0][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-006f153892a11e57b"
+        [1m[0mid[0m[0m                   = "eipalloc-0226a9c97cdd438d0"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0d5f7113eddde5fd1"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-0-128.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.0.128"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[1][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-0a18cd117734d190f"
+        [1m[0mid[0m[0m                   = "eipalloc-040e2edcf1120b666"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-07e2e5acb49b119e5"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-1-112.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.1.112"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[2][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-035d986eddbe762c1"
+        [1m[0mid[0m[0m                   = "eipalloc-0aef0dd1a07992641"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0bf096d56d4674b70"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-2-98.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.2.98"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.vpc.aws_route_table.nat-route[0][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-0d06282f169875ef0"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0743cfd67f670bf52"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0743cfd67f670bf52"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-1-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[1][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-052942e64b27743d1"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-05d639df73e155475"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-05d639df73e155475"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-2-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[2][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-0e404077970a1c917"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-048b6a468409d8344"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-048b6a468409d8344"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-3-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-02-28T15:56:56-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/use1/network/vpc
+time=2023-02-28T15:56:56-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ✅ ./use1/services/argocd Passed  ===
+=== ✅ ./use1/services/eks Passed  ===
+=== ⛔ ./globals/iam/roles/alb-ingress-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-03-02T12:41:58-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/alb-ingress-controller-role] 
+time=2023-03-02T12:41:58-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-external-dns-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-03-02T12:42:00-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-external-dns-role] 
+time=2023-03-02T12:42:00-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-app-mesh-controller-role Error Occured ===
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-03-02T12:42:01-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-app-mesh-controller-role] 
+time=2023-03-02T12:42:01-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== ⛔ ./globals/iam/roles/k8-cert-manager-role Error Occured ===
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing the backend...[0m
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mBackend configuration changed[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mA change in the backend configuration has been detected, which may require
+[31m│[0m [0mmigrating existing state.
+[31m│[0m [0m
+[31m│[0m [0mIf you wish to attempt automatic migration of the state, use "terraform
+[31m│[0m [0minit -migrate-state".
+[31m│[0m [0mIf you wish to store the current configuration with no changes to the
+[31m│[0m [0mstate, use "terraform init -reconfigure".
+[31m╵[0m[0m
+[0m[0m
+time=2023-03-02T12:42:02-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role prefix=[/Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/iam/roles/k8-cert-manager-role] 
+time=2023-03-02T12:42:02-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./globals/route53 Drift Detected ===
+[0m[1mdata.terraform_remote_state.vpc: Reading...[0m[0m
+[0m[1mdata.terraform_remote_state.vpc: Read complete after 1s[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Reading...[0m[0m
+[0m[1mmodule.records.data.aws_route53_zone.this[0]: Read complete after 2s [id=Z02508202FLLB6FG0WHJW][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.records.aws_route53_record.this[" A"][0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_route53_record" "this" {
+      [32m+[0m [0m[1m[0mallow_overwrite[0m[0m = false
+      [32m+[0m [0m[1m[0mfqdn[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mname[0m[0m            = "geoff1-example.com"
+      [32m+[0m [0m[1m[0mrecords[0m[0m         = [
+          [32m+[0m [0m"10.10.10.10",
+        ]
+      [32m+[0m [0m[1m[0mttl[0m[0m             = 3600
+      [32m+[0m [0m[1m[0mtype[0m[0m            = "A"
+      [32m+[0m [0m[1m[0mzone_id[0m[0m         = "Z02508202FLLB6FG0WHJW"
+    }
+
+[0m[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0mroute53_record_fqdn[0m[0m = {
+      [32m+[0m [0m" A" = (known after apply)
+    }
+  [32m+[0m [0m[1m[0mroute53_record_name[0m[0m = {
+      [32m+[0m [0m" A" = "geoff1-example.com"
+    }
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-03-02T12:42:18-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/globals/route53
+time=2023-03-02T12:42:18-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ⛔ ./use1/data-storage/postgres Error Occured ===
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 122, in module "db_default":
+[31m│[0m [0m 122:   [4midentifier[0m = "${local.name}-default"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "identifier" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 124, in module "db_default":
+[31m│[0m [0m 124:   [4mcreate_db_option_group[0m    = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_option_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 125, in module "db_default":
+[31m│[0m [0m 125:   [4mcreate_db_parameter_group[0m = false[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_db_parameter_group" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 128, in module "db_default":
+[31m│[0m [0m 128:   [4mengine[0m               = "postgres"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 129, in module "db_default":
+[31m│[0m [0m 129:   [4mengine_version[0m       = "14.3"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 130, in module "db_default":
+[31m│[0m [0m 130:   [4mfamily[0m               = "postgres14" # DB parameter group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "family" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 131, in module "db_default":
+[31m│[0m [0m 131:   [4mmajor_engine_version[0m = "14.3"       # DB option group[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "major_engine_version" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 132, in module "db_default":
+[31m│[0m [0m 132:   [4minstance_class[0m       = "db.t3.large"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "instance_class" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 134, in module "db_default":
+[31m│[0m [0m 134:   [4mallocated_storage[0m = 20[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "allocated_storage" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 139, in module "db_default":
+[31m│[0m [0m 139:   [4mname[0m                   = "completePostgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "name" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 140, in module "db_default":
+[31m│[0m [0m 140:   [4musername[0m               = "complete_postgresql"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "username" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 141, in module "db_default":
+[31m│[0m [0m 141:   [4mcreate_random_password[0m = true[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "create_random_password" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 142, in module "db_default":
+[31m│[0m [0m 142:   [4mrandom_password_length[0m = 12[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "random_password_length" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 143, in module "db_default":
+[31m│[0m [0m 143:   [4mport[0m                   = 5432[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "port" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 145, in module "db_default":
+[31m│[0m [0m 145:   [4msubnet_ids[0m             = data.terraform_remote_state.vpc.outputs.aws_subnets_private[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "subnet_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 146, in module "db_default":
+[31m│[0m [0m 146:   [4mvpc_security_group_ids[0m = [module.security_group.security_group_id][0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "vpc_security_group_ids" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 148, in module "db_default":
+[31m│[0m [0m 148:   [4mmaintenance_window[0m = "Mon:00:00-Mon:03:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "maintenance_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 149, in module "db_default":
+[31m│[0m [0m 149:   [4mbackup_window[0m      = "03:00-06:00"[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_window" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 151, in module "db_default":
+[31m│[0m [0m 151:   [4mbackup_retention_period[0m = 0[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "backup_retention_period" is not expected here.
+[31m╵[0m[0m
+[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mUnsupported argument[0m
+[31m│[0m [0m
+[31m│[0m [0m[0m  on main.tf line 153, in module "db_default":
+[31m│[0m [0m 153:   [4mtags[0m = local.tags[0m
+[31m│[0m [0m
+[31m│[0m [0mAn argument named "tags" is not expected here.
+[31m╵[0m[0m
+time=2023-03-02T12:42:33-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/use1/data-storage/postgres
+time=2023-03-02T12:42:33-06:00 level=error msg=1 error occurred:
+	* exit status 1
+
+
+=== 🚧 ./use1/network/vpc Drift Detected ===
+[0m[1mmodule.vpc.aws_eip.nat[1]: Refreshing state... [id=eipalloc-090c69edd50fef154][0m
+[0m[1mmodule.vpc.aws_eip.nat[0]: Refreshing state... [id=eipalloc-048b551c7ddf06a8b][0m
+[0m[1mmodule.vpc.aws_eip.nat[2]: Refreshing state... [id=eipalloc-0db60629e44aa5f32][0m
+[0m[1mmodule.vpc.aws_vpc.main: Refreshing state... [id=vpc-077ecff070fd79cdf][0m
+[0m[1mmodule.vpc.aws_internet_gateway.gw: Refreshing state... [id=igw-05b5aed879beb3cb2][0m
+[0m[1mmodule.vpc.aws_subnet.public[1]: Refreshing state... [id=subnet-0d67ce24992b23bd2][0m
+[0m[1mmodule.vpc.aws_subnet.public[2]: Refreshing state... [id=subnet-0e506e74d53901747][0m
+[0m[1mmodule.vpc.aws_subnet.public[0]: Refreshing state... [id=subnet-080b4fa7d6ccbb705][0m
+[0m[1mmodule.vpc.aws_subnet.private[2]: Refreshing state... [id=subnet-0491f26128471dd3f][0m
+[0m[1mmodule.vpc.aws_subnet.private[1]: Refreshing state... [id=subnet-06054772bd32c0753][0m
+[0m[1mmodule.vpc.aws_subnet.private[0]: Refreshing state... [id=subnet-06124760f7ab439f0][0m
+[0m[1mmodule.vpc.aws_route_table.internet-route: Refreshing state... [id=rtb-0b044f3c18ebc63ca][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[1]: Refreshing state... [id=nat-03288d99eba333c49][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[0]: Refreshing state... [id=nat-0ed6069bf59c289c3][0m
+[0m[1mmodule.vpc.aws_nat_gateway.gw[2]: Refreshing state... [id=nat-0432d3303072f2488][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[0]: Refreshing state... [id=rtbassoc-083224d4ca5217ff2][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[2]: Refreshing state... [id=rtbassoc-0231cab27c7533a83][0m
+[0m[1mmodule.vpc.aws_route_table_association.public[1]: Refreshing state... [id=rtbassoc-02f8b1cfa0fab49fa][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[0]: Refreshing state... [id=rtb-077ee6e97b3e55838][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[1]: Refreshing state... [id=rtb-0d8f5b9cf23ef676d][0m
+[0m[1mmodule.vpc.aws_route_table.nat-route[2]: Refreshing state... [id=rtb-0cd77a01ca2d8cd80][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[1]: Refreshing state... [id=rtbassoc-010ff8884b810f0b2][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[2]: Refreshing state... [id=rtbassoc-069c7c94362ec3cb4][0m
+[0m[1mmodule.vpc.aws_route_table_association.private[0]: Refreshing state... [id=rtbassoc-03dfd69c82a85f144][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # module.vpc.aws_eip.nat[0][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-0c07eb208449d4844"
+        [1m[0mid[0m[0m                   = "eipalloc-048b551c7ddf06a8b"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-041cd7c4ad68b5d22"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-0-159.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.0.159"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[1][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-0e4a6e77d217e4be7"
+        [1m[0mid[0m[0m                   = "eipalloc-090c69edd50fef154"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0a02218ce5cacbb58"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-1-50.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.1.50"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_eip.nat[2][0m has changed[0m[0m
+[0m  [33m~[0m[0m resource "aws_eip" "nat" {
+      [32m+[0m [0m[1m[0massociation_id[0m[0m       = "eipassoc-00b269e0cb6e594c6"
+        [1m[0mid[0m[0m                   = "eipalloc-0db60629e44aa5f32"
+      [32m+[0m [0m[1m[0mnetwork_interface[0m[0m    = "eni-0bc02d6954112dd1f"
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m          = "ip-192-168-2-78.ec2.internal"
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m           = "192.168.2.78"
+      [32m+[0m [0m[1m[0mtags[0m[0m                 = {}
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [33m~[0m update in-place
+[0m
+Terraform will perform the following actions:
+
+[1m  # module.vpc.aws_route_table.nat-route[0][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-077ee6e97b3e55838"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0ed6069bf59c289c3"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0ed6069bf59c289c3"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-1-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[1][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-0d8f5b9cf23ef676d"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-03288d99eba333c49"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-03288d99eba333c49"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-2-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # module.vpc.aws_route_table.nat-route[2][0m will be updated in-place[0m[0m
+[0m  [33m~[0m[0m resource "aws_route_table" "nat-route" {
+        [1m[0mid[0m[0m               = "rtb-0cd77a01ca2d8cd80"
+      [33m~[0m [0m[1m[0mroute[0m[0m            = [
+          [31m-[0m [0m{
+              [31m-[0m [0mcarrier_gateway_id         = ""
+              [31m-[0m [0mcidr_block                 = "0.0.0.0/0"
+              [31m-[0m [0mdestination_prefix_list_id = ""
+              [31m-[0m [0megress_only_gateway_id     = ""
+              [31m-[0m [0mgateway_id                 = ""
+              [31m-[0m [0minstance_id                = ""
+              [31m-[0m [0mipv6_cidr_block            = ""
+              [31m-[0m [0mlocal_gateway_id           = ""
+              [31m-[0m [0mnat_gateway_id             = "nat-0432d3303072f2488"
+              [31m-[0m [0mnetwork_interface_id       = ""
+              [31m-[0m [0mtransit_gateway_id         = ""
+              [31m-[0m [0mvpc_endpoint_id            = ""
+              [31m-[0m [0mvpc_peering_connection_id  = ""
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcarrier_gateway_id         = ""
+              [32m+[0m [0mcidr_block                 = "0.0.0.0/0"
+              [32m+[0m [0mdestination_prefix_list_id = ""
+              [32m+[0m [0megress_only_gateway_id     = ""
+              [32m+[0m [0mgateway_id                 = "nat-0432d3303072f2488"
+              [32m+[0m [0minstance_id                = ""
+              [32m+[0m [0mipv6_cidr_block            = ""
+              [32m+[0m [0mlocal_gateway_id           = ""
+              [32m+[0m [0mnat_gateway_id             = ""
+              [32m+[0m [0mnetwork_interface_id       = ""
+              [32m+[0m [0mtransit_gateway_id         = ""
+              [32m+[0m [0mvpc_endpoint_id            = ""
+              [32m+[0m [0mvpc_peering_connection_id  = ""
+            },
+        ]
+        [1m[0mtags[0m[0m             = {
+            "Name"  = "eks-nat_route_table-3-non-prod"
+            "state" = "public"
+        }
+        [90m# (5 unchanged attributes hidden)[0m[0m
+    }
+
+[0m[1mPlan:[0m 0 to add, 3 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+time=2023-03-02T12:42:50-06:00 level=error msg=Terraform invocation failed in /Users/geoffreyscarvell/demo/terraform-infrastructure/demo/use1/network/vpc
+time=2023-03-02T12:42:50-06:00 level=error msg=1 error occurred:
+	* exit status 2
+
+
+=== ✅ ./use1/services/argocd Passed  ===
+=== ✅ ./use1/services/eks Passed  ===

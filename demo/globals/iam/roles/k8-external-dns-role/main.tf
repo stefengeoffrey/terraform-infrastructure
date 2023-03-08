@@ -47,10 +47,9 @@ provider "helm" {
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-        bucket = "geoff-nonprod-terraform-state"
-        key    = "non-prod/use1/network/vpc/terraform.tfstate"
+        bucket = "demo-geoff1-terraform-state"
+        key    = "demo/use1/network/vpc/terraform.tfstate"
         region = "us-east-1"
-       # role_arn = "arn:aws:iam::210524891490:role/Dev-Admin"
   }
 }
 
@@ -63,8 +62,8 @@ data "terraform_remote_state" "vpc" {
 data "terraform_remote_state" "eks" {
   backend = "s3"
   config = {
-        bucket = "geoff-nonprod-terraform-state"
-        key    = "non-prod/use1/services/eks/terraform.tfstate"
+        bucket = "demo-geoff1-terraform-state"
+        key    = "demo/use1/services/eks/terraform.tfstate"
         region = "us-east-1"
        # role_arn = "arn:aws:iam::210524891490:role/Dev-Admin"
   }
